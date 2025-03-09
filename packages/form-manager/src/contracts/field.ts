@@ -19,5 +19,8 @@ export interface FieldBaseProps<T> extends FieldState<T[keyof T]> {
 export interface FieldConfiguration<T> {
   name: keyof T;
   value: T[keyof T];
+  disabled?: boolean;
+  hidden?: boolean;
+  validate?: (value: T[keyof T]) => ValidationResult;
   render: ComponentType<FieldBaseProps<T>>;
 }
